@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Admin Dashboard</title>
 </head>
 <body>
@@ -12,11 +13,13 @@
     <table align="right">
         <td><td><a href="logout.php"><button>Logout</button></a></td></td>
     </table>
-    <table align="left">
+    <table id="pending_table" align="left">
         <tr><td>Pending Payment</td></tr>
+        <tr><td>Transaction ID</td><td>From &nbsp;&nbsp;</td><td>To &nbsp;&nbsp;</td><td>Amount &nbsp;&nbsp;</td></tr>
     </table>
-    <table align="right">
+    <table id="approved_table" align="right">
         <tr><td>Approved Payment</td></tr>
+        <tr><td>Transaction ID</td><td>From &nbsp;&nbsp;</td><td>To &nbsp;&nbsp;</td><td>Amount &nbsp;&nbsp;</td></tr>
     </table>
 </body>
 </html>
