@@ -12,3 +12,14 @@
     margin: 8px 0;
     box-sizing: border-box;
 }
+input[type=submit]{
+    border: 1px solid black;
+    width: 50%;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 13px;
+}
+input[type=submit]:active {
+    background-color: #28bdb0;
+}
+
