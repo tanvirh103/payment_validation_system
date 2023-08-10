@@ -4,6 +4,7 @@ if(isset($_POST['submit'])){
     $username=$_POST['username'];
     $password=$_POST['password'];
     $row=userinfo($username,$password);
+   
     if($row['role']=="User"){
         header('location:user_dashboard.html');
     }else if($row['role']=="Admin"){
