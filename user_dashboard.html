@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>User Dashboard</title>
 </head>
 <body>
@@ -13,11 +14,11 @@
         </table>
         <table>
             <form action="payment_controller.php" method="post">
-                <tr><td>From: </td><td><input type="text" name="from"></td></tr>
-                <tr><td>To: </td><td><input type="text" name="to"></td></tr>
-                <tr><td>Date: </td><td><input type="text" name="date"></td></tr>
-                <tr><td>Amount: </td><td><input type="text" name="amount"></td></tr>
-                <tr><td>Signature: </td><td><input type="text" name="signature"></td></tr>
+                <tr><td>From: </td><td><input type="text" name="from" class="input"></td></tr>
+                <tr><td>To: </td><td><input type="text" name="to" class="input"></td></tr>
+                <tr><td>Date: </td><td><input type="text" name="date" class="input"></td></tr>
+                <tr><td>Amount: </td><td><input type="text" name="amount" class="input"></td></tr>
+                <tr><td>Signature: </td><td><input type="text" name="signature" class="input"></td></tr>
                 <tr><td><br></td></tr>
                 <tr align="center"><td colspan="3"><input type="submit" name="submit" value="Make Payment"></td></tr>
             </form>

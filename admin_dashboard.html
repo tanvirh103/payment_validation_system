@@ -10,16 +10,30 @@
     <center>
         <h2>Admin Dashboard</h2>
     </center>
-    <table align="right">
+    <table>
         <td><td><a href="logout.php"><button>Logout</button></a></td></td>
     </table>
-    <table id="pending_table" align="left">
-        <tr><td>Pending Payment</td></tr>
-        <tr><td>Transaction ID</td><td>From &nbsp;&nbsp;</td><td>To &nbsp;&nbsp;</td><td>Amount &nbsp;&nbsp;</td></tr>
+    <table id="pending_table" cellspacing="25" align="left">
+        <tr><td colspan="6">Pending Payment</td></tr>
+        <tr><td>Transaction ID</td>
+            <td>From &nbsp;&nbsp;</td>
+            <td>To &nbsp;&nbsp;</td>
+            <td>Amount &nbsp;&nbsp;</td>
+            <td>Date&nbsp;&nbsp;</td>
+            <td>Approval Votes&nbsp;&nbsp;</td>
+            <td>Action&nbsp;&nbsp;</td>
+        </tr>
     </table>
-    <table id="approved_table" align="right">
-        <tr><td>Approved Payment</td></tr>
-        <tr><td>Transaction ID</td><td>From &nbsp;&nbsp;</td><td>To &nbsp;&nbsp;</td><td>Amount &nbsp;&nbsp;</td></tr>
+    <table id="pending_table" cellspacing="25" align="right">
+        <tr><td colspan="6">Approved Payment</td></tr>
+        <tr><td>Transaction ID</td>
+            <td>From&nbsp;&nbsp;</td>
+            <td>To&nbsp;&nbsp;</td>
+            <td>Amount&nbsp;&nbsp;</td>
+            <td>Date&nbsp;&nbsp;</td>
+            <td>Approval Votes&nbsp;&nbsp;</td>
+            <td>Action&nbsp;&nbsp;</td>
+        </tr>
     </table>
 </body>
 </html>
