@@ -62,12 +62,12 @@
             $data2 = array(
 
                 'ID' => $id,
-                'To' => $arrayData[$key]['To'],
-                'From' => $arrayData[$key]['From'],
-                'Date' => $arrayData[$key]['Date'],
-                'Amount' => $arrayData[$key]['Amount'],
-                'Signature' => $arrayData[$key]['Signature'],
-                'Approval Votes' => $arrayData[$key]['Approval Votes']
+                'To' => $arrayData[$key]['TO'],
+                'From' => $arrayData[$key]['FROM'],
+                'Date' => $arrayData[$key]['DATE'],
+                'Amount' => $arrayData[$key]['AMOUNT'],
+                'Signature' => $arrayData[$key]['SIGNATURE'],
+                'Approval Votes' => $arrayData[$key]['VOTE']
             
             );
 
