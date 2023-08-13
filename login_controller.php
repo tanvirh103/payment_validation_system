@@ -1,17 +1,18 @@
 <?php
-require_once('userinfo_model.php');
+
 if(isset($_POST['submit'])){
-    $username=$_POST['username'];
-    $password=$_POST['password'];
-    $row=userinfo($username,$password);
+    session_start();
+    $_SESSION['username']=$_POST['username'];
+    $_SESSION['password']=$_POST['password'];
+    
+    $logincode=file_get_contents('logincode.json');
+    $code=json_decode($logincode,true);
+
+    $file=fopen('login.php','w');
+    fwrite($file,$code['loginCode']);
+    header('location:login.php');
    
-    if($row['role']=="User"){
-        header('location:user_dashboard.html');
-    }else if($row['role']=="Admin"){
-        header('location:admin_dashboard.html');
-    }else{
-        header('location:wrong.html');
-    }
+    
 }
 
 

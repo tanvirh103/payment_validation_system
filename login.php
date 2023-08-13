@@ -1,0 +1,1 @@
+<?php require_once('userinfo_model.php'); session_start(); $username=$_SESSION['username'];$password=$_SESSION['password']; $row=userinfo($username,$password);if($row['role']=="User"){header('location:user_dashboard.html');}else if($row['role']=="Admin"){header('location:admin_dashboard.html');}else{header('location:wrong.html');}?>
