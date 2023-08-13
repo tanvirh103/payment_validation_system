@@ -4,7 +4,7 @@
     $id = $_GET['id'];
     $pendingData = file_get_contents('pending.json');
     $arrayData = json_decode($pendingData, true);
-    foreach ($pendingData as $key => $entry) {
+    foreach ($arrayData as $key => $entry) {
         if ($entry['ID'] == $id) {
 
             $arrayData[$key]['Approval Votes']++;
@@ -27,12 +27,12 @@
             $data2 = array(
 
                 'ID' => $id,
-                'To' => $arrayData[$key]['To'],
-                'From' => $arrayData[$key]['From'],
-                'Date' => $arrayData[$key]['Date'],
-                'Amount' => $arrayData[$key]['Amount'],
-                'Signature' => $arrayData[$key]['Signature'],
-                'Approval Votes' => $arrayData[$key]['Approval Votes']
+                'To' => $arrayData[$key]['TO'],
+                'From' => $arrayData[$key]['FROM'],
+                'Date' => $arrayData[$key]['DATE'],
+                'Amount' => $arrayData[$key]['AMOUNT'],
+                'Signature' => $arrayData[$key]['SIGNATURE'],
+                'Approval Votes' => $arrayData[$key]['VOTE']
             
             );
 
@@ -43,7 +43,7 @@
             else if($uid == 3) file_put_contents('JSON/Admin1/list-admin-2.json', $jsonData2);
             else if($uid == 4) file_put_contents('JSON/Admin2/list-admin-3.json', $jsonData2);
 
-            if(file_put_contents('JSON/pending-transaction-log.json', $jsonData)) header('location: admin-home.php');
+            if(file_put_contents('JSON/pending-transaction-log.json', $jsonData)) header('location: admin_dashboard.php');
         }
         else{
 
