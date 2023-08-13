@@ -66,7 +66,7 @@
                         <td> <?php echo $col["AMOUNT"]; ?> </td>
                         <td> <?php echo $col["DATE"]; ?> </td>
                         <td> <?php echo $col["VOTE"]; ?> </td>
-                        <td> <a href="approval-controller.php?id=<?php echo $col["ID"]; ?>"><button class="btn">Approve</button></a></td>
+                        <td> <a href="approve_controller.php?id=<?php echo $col["ID"]; ?>"><button class="btn">Approve</button></a></td>
                     </tr>
                 <?php
                 }
