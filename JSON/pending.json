@@ -1,26 +1,26 @@
 [
     {
-        "ID": "68151",
-        "TO": "Nishan ",
+        "ID": 68151,
         "FROM": "Tamal",
+        "TO": "Nishan ",
         "DATE": "13-08-23",
         "AMOUNT": "1000",
         "SIGNATURE": "Nishan",
-        "VOTE": 1
+        "VOTE": 0
     },
     {
-        "ID": "40943",
-        "TO": "Nishan ",
+        "ID": 40943,
         "FROM": "Tamal",
+        "TO": "Nishan ",
         "DATE": "13-08-23",
         "AMOUNT": "1000",
         "SIGNATURE": "Nishan",
-        "VOTE": 1
+        "VOTE": 0
     },
     {
-        "ID": "44971",
-        "TO": "Tanvir",
+        "ID": 44971,
         "FROM": "YASIR",
+        "TO": "Tanvir",
         "DATE": "13-08-23",
         "AMOUNT": "1000",
         "SIGNATURE": "Tamal",

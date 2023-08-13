@@ -7,11 +7,11 @@
     foreach ($arrayData as $key => $entry) {
         if ($entry['ID'] == $id) {
 
-            $arrayData[$key]['Approval Votes']++;
+            $arrayData[$key]['VOTE']++;
 
             $jsonData = json_encode($arrayData, JSON_PRETTY_PRINT);
 
-            if($arrayData[$key]['Approval Votes']<2){
+            if($arrayData[$key]['VOTE']<2){
 
             if($userid == 2){
                 $adminData = file_get_contents('JSON/Admin/list-admin-1.json');
@@ -24,26 +24,26 @@
                 
             $adminarray = json_decode($adminData, true);
 
-            $data2 = array(
+            $data = array(
 
                 'ID' => $id,
-                'To' => $arrayData[$key]['TO'],
-                'From' => $arrayData[$key]['FROM'],
-                'Date' => $arrayData[$key]['DATE'],
-                'Amount' => $arrayData[$key]['AMOUNT'],
-                'Signature' => $arrayData[$key]['SIGNATURE'],
-                'Approval Votes' => $arrayData[$key]['VOTE']
+                'TO' => $arrayData[$key]['TO'],
+                'FROM' => $arrayData[$key]['FROM'],
+                'DATE' => $arrayData[$key]['DATE'],
+                'AMOUNT' => $arrayData[$key]['AMOUNT'],
+                'SIGNATURE' => $arrayData[$key]['SIGNATURE'],
+                'VOTE' => $arrayData[$key]['VOTE']
             
             );
 
-            $arrayData2 [] = $data2;
-            $jsonData2 = json_encode($arrayData2, JSON_PRETTY_PRINT);
+            $adminarray [] = $data;
+            $jsonData1 = json_encode($adminarray, JSON_PRETTY_PRINT);
 
-            if($uid == 2) file_put_contents('JSON/Admin/list-admin-1.json', $jsonData2);
-            else if($uid == 3) file_put_contents('JSON/Admin1/list-admin-2.json', $jsonData2);
-            else if($uid == 4) file_put_contents('JSON/Admin2/list-admin-3.json', $jsonData2);
+            if($userid == 2) file_put_contents('JSON/Admin/list-admin-1.json', $jsonData1);
+            else if($userid == 3) file_put_contents('JSON/Admin1/list-admin-2.json', $jsonData1);
+            else if($userid == 4) file_put_contents('JSON/Admin2/list-admin-3.json', $jsonData1);
 
-            if(file_put_contents('JSON/pending-transaction-log.json', $jsonData)) header('location: admin_dashboard.php');
+            if(file_put_contents('JSON/pending.json', $jsonData)) header('location: admin_dashboard.php');
         }
         else{
 
@@ -62,12 +62,12 @@
             $data2 = array(
 
                 'ID' => $id,
-                'To' => $arrayData[$key]['TO'],
-                'From' => $arrayData[$key]['FROM'],
-                'Date' => $arrayData[$key]['DATE'],
-                'Amount' => $arrayData[$key]['AMOUNT'],
-                'Signature' => $arrayData[$key]['SIGNATURE'],
-                'Approval Votes' => $arrayData[$key]['VOTE']
+                'TO' => $arrayData[$key]['TO'],
+                'FROM' => $arrayData[$key]['FROM'],
+                'DATE' => $arrayData[$key]['DATE'],
+                'AMOUNT' => $arrayData[$key]['AMOUNT'],
+                'SIGNATURE' => $arrayData[$key]['SIGNATURE'],
+                'VOTE' => $arrayData[$key]['VOTE']
             
             );
 
