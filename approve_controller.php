@@ -2,8 +2,8 @@
 
     $userid = $_COOKIE['admin'];
     $id = $_GET['id'];
-    $pendingData = file_get_contents('pending.json');
-    $arrayData = json_decode($pendingData, true);
+    $currentData = file_get_contents('pending.json');
+    $arrayData = json_decode($currentData, true);
     foreach ($arrayData as $key => $entry) {
         if ($entry['ID'] == $id) {
 
@@ -14,17 +14,17 @@
             if($arrayData[$key]['VOTE']<2){
 
             if($userid == 2){
-                $adminData = file_get_contents('JSON/Admin/list-admin-1.json');
+                $currentData2 = file_get_contents('JSON/Admin/list-admin-1.json');
             }else if($userid == 3){
-                $adminData = file_get_contents('JSON/Admin1/list-admin-2.json');
+                $currentData2 = file_get_contents('JSON/Admin1/list-admin-2.json');
             } 
             else if($userid == 4){
-                $adminData = file_get_contents('JSON/Admin2/list-admin-3.json');
+                $currentData2 = file_get_contents('JSON/Admin2/list-admin-3.json');
             } 
                 
-            $adminarray = json_decode($adminData, true);
+            $arrayData2 = json_decode($currentData2, true);
 
-            $data = array(
+            $data2 = array(
 
                 'ID' => $id,
                 'TO' => $arrayData[$key]['TO'],
@@ -36,14 +36,14 @@
             
             );
 
-            $adminarray [] = $data;
-            $jsonData1 = json_encode($adminarray, JSON_PRETTY_PRINT);
+            $arrayData2 [] = $data2;
+            $jsonData2 = json_encode($arrayData2, JSON_PRETTY_PRINT);
 
-            if($userid == 2) file_put_contents('JSON/Admin/list-admin-1.json', $jsonData1);
-            else if($userid == 3) file_put_contents('JSON/Admin1/list-admin-2.json', $jsonData1);
-            else if($userid == 4) file_put_contents('JSON/Admin2/list-admin-3.json', $jsonData1);
+            if($userid == 2) file_put_contents('JSON/Admin/list-admin-1.json', $jsonData2);
+            else if($userid == 3) file_put_contents('JSON/Admin1/list-admin-2.json', $jsonData2);
+            else if($userid == 4) file_put_contents('JSON/Admin2/list-admin-3.json', $jsonData2);
 
-            if(file_put_contents('JSON/pending.json', $jsonData)) header('location: admin_dashboard.php');
+            if(file_put_contents('pending.json', $jsonData)) header('location: admin_dashboard.php');
         }
         else{
 
@@ -88,7 +88,7 @@
             }
 
 
-            if ($flag2 == false) $arrayData2 [] = $data2;
+            if ($flag2 == false) $adminarray [] = $data2;
             if ($flag3 == false) $arrayData3 [] = $data2;
             if ($flag4 == false) $arrayData4 [] = $data2;
             
