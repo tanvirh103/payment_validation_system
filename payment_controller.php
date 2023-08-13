@@ -8,10 +8,18 @@
         $amount=$_POST['amount'];
         $signature=$_POST['signature'];
 
-        $details=array("ID"=>$id,"FROM"=>$from,"TO"=>$to,"DATE"=>date("d-m-y"),"AMOUNT"=>$amount,"SIGNATURE"=>$signature,"VOTE"=>0);
+        $details=array(
+        "ID"=>$id,
+        "FROM"=>$from,
+        "TO"=>$to,
+        "DATE"=>date("d-m-y"),
+        "AMOUNT"=>$amount,
+        "SIGNATURE"=>$signature,
+        "VOTE"=>0
+    );
 
         $data[]=$details;
-        $json=json_encode($data);
+        $json=json_encode($data,JSON_PRETTY_PRINT);
         if(file_put_contents('pending.json',$json)){
             echo "Payment successful.Wait for approval";
         }else{
