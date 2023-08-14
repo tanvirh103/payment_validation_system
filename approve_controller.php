@@ -2,8 +2,8 @@
 
     $userid = $_COOKIE['admin'];
     $id = $_GET['id'];
-    $currentData = file_get_contents('pending.json');
-    $arrayData = json_decode($currentData, true);
+    $pendingData = file_get_contents('pending.json');
+    $arrayData = json_decode($pendingData, true);
     foreach ($arrayData as $key => $entry) {
         if ($entry['ID'] == $id) {
 
@@ -14,17 +14,17 @@
             if($arrayData[$key]['VOTE']<2){
 
             if($userid == 2){
-                $currentData2 = file_get_contents('JSON/Admin/list-admin-1.json');
+                $adminData = file_get_contents('JSON/Admin/list-admin-1.json');
             }else if($userid == 3){
-                $currentData2 = file_get_contents('JSON/Admin1/list-admin-2.json');
+                $adminData = file_get_contents('JSON/Admin1/list-admin-2.json');
             } 
             else if($userid == 4){
-                $currentData2 = file_get_contents('JSON/Admin2/list-admin-3.json');
+                $adminData = file_get_contents('JSON/Admin2/list-admin-3.json');
             } 
                 
-            $arrayData2 = json_decode($currentData2, true);
+            $adminarray = json_decode($adminData, true);
 
-            $data2 = array(
+            $data = array(
 
                 'ID' => $id,
                 'TO' => $arrayData[$key]['TO'],
@@ -36,7 +36,7 @@
             
             );
 
-            $arrayData2 [] = $data2;
+            $arrayData2 [] = $data;
             $jsonData2 = json_encode($arrayData2, JSON_PRETTY_PRINT);
 
             if($userid == 2) file_put_contents('JSON/Admin/list-admin-1.json', $jsonData2);

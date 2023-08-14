@@ -1,3 +1,8 @@
+<?php
+
+    if(file_exists('login.php')) unlink('login.php');
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
