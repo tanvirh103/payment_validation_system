@@ -16,7 +16,7 @@
     <div class="section-title">Pending Payments</div>
    
     <table class="payment-table">
-      <thead>
+      
         <tr>
           <th>From</th>
           <th>To</th>
@@ -25,37 +25,34 @@
           <th>Approval Votes</th>
           <th>Action</th>
         </tr>
-      </thead>
+     
         <?php
-         $usuerID = $_COOKIE['admin'];
+         $userID = $_COOKIE['admin'];
 
          $pendingData = file_get_contents('pending.json');
-         $arrayData = json_decode($pendingData, true);
+         $pendingArray = json_decode($pendingData, true);
          
-         if($usuerID == 2) {
+         if($userID == 2) {
             $currentData = file_get_contents('JSON/Admin/list-admin-1.json');
-        }else if($usuerID == 3) {
+        }else if($userID == 3) {
             $currentData = file_get_contents('JSON/Admin1/list-admin-2.json');
-        }else if($usuerID == 4){
+        }else if($userID == 4){
             $currentData = file_get_contents('JSON/Admin2/list-admin-3.json');
         } 
          $adminarray = json_decode($currentData, true);
 
-         if($arrayData == null) {
+         if($pendingArray == null) {
 
              ?> <tr><td colspan="6">No Transactions At This Moment</td></tr><?php
 
          }
          else {
-            foreach($arrayData as $col){
+            foreach($pendingArray as $col){
                 $flag = false;
                 if($adminarray == null) {}
                 else{
                 foreach($adminarray as $col1){
-                    if($adminarray == null) {}
-                    else{
                     if($col["ID"]==$col1["ID"]) $flag = true;
-                    }
                 }
                 }
                 if($flag == true) continue;
@@ -79,7 +76,6 @@
     
     <div class="section-title">Approved Payments</div>
     <table class="payment-table">
-      <thead>
         <tr>
           <th>From</th>
           <th>To</th>
@@ -87,14 +83,13 @@
           <th>Date</th>
           <th>Approval Votes</th>
         </tr>
-      </thead>
         <?php
-        $usuerID = $_COOKIE['admin'];
-        if($usuerID == 2) {
+        $userID = $_COOKIE['admin'];
+        if($userID == 2) {
             $pendingData = file_get_contents('JSON/Admin/list-admin-1.json');
-        }else if($usuerID == 3) {
+        }else if($userID == 3) {
             $pendingData = file_get_contents('JSON/Admin1/list-admin-2.json');
-        }else if($usuerID == 4){
+        }else if($userID == 4){
             $pendingData = file_get_contents('JSON/Admin2/list-admin-3.json');
         } 
          $adminarray = json_decode($pendingData, true);
