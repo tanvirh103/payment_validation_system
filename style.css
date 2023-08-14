@@ -153,3 +153,15 @@ body {
   .action-button:hover {
     background-color: #0056b3;
   }
+  .logout-button {
+    background-color: #561d8b;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  .logout-button:hover {
+    background-color: #49377a;
+  }
