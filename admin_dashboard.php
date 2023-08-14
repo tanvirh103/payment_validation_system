@@ -32,13 +32,13 @@
          $arrayData = json_decode($pendingData, true);
          
          if($usuerID == 2) {
-            $adminData = file_get_contents('JSON/Admin/list-admin-1.json');
+            $currentData2 = file_get_contents('JSON/Admin/list-admin-1.json');
         }else if($usuerID == 3) {
-            $adminData = file_get_contents('JSON/Admin1/list-admin-2.json');
+            $currentData2 = file_get_contents('JSON/Admin1/list-admin-2.json');
         }else if($usuerID == 4){
-            $adminData = file_get_contents('JSON/Admin2/list-admin-3.json');
+            $currentData2 = file_get_contents('JSON/Admin2/list-admin-3.json');
         } 
-         $adminarray = json_decode($adminData, true);
+         $adminarray = json_decode($currentData2, true);
 
          if($arrayData == null) {
 
@@ -87,13 +87,13 @@
         <?php
         $usuerID = $_COOKIE['admin'];
         if($usuerID == 2) {
-            $adminData = file_get_contents('JSON/Admin/list-admin-1.json');
+            $pendingData = file_get_contents('JSON/Admin/list-admin-1.json');
         }else if($usuerID == 3) {
-            $adminData = file_get_contents('JSON/Admin1/list-admin-2.json');
+            $pendingData = file_get_contents('JSON/Admin1/list-admin-2.json');
         }else if($usuerID == 4){
-            $adminData = file_get_contents('JSON/Admin2/list-admin-3.json');
+            $pendingData = file_get_contents('JSON/Admin2/list-admin-3.json');
         } 
-         $adminarray = json_decode($adminData, true);
+         $adminarray = json_decode($pendingData, true);
          if($adminarray == null) {
 
             ?> <tr><td colspan="6">No Transactions At This Moment</td></tr><?php
