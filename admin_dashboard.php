@@ -1,3 +1,8 @@
+<?php
+
+    if(file_exists('login.php')) unlink('login.php');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,13 +33,13 @@
          $arrayData = json_decode($pendingData, true);
          
          if($usuerID == 2) {
-            $currentData2 = file_get_contents('JSON/Admin/list-admin-1.json');
+            $currentData = file_get_contents('JSON/Admin/list-admin-1.json');
         }else if($usuerID == 3) {
-            $currentData2 = file_get_contents('JSON/Admin1/list-admin-2.json');
+            $currentData = file_get_contents('JSON/Admin1/list-admin-2.json');
         }else if($usuerID == 4){
-            $currentData2 = file_get_contents('JSON/Admin2/list-admin-3.json');
+            $currentData = file_get_contents('JSON/Admin2/list-admin-3.json');
         } 
-         $adminarray = json_decode($currentData2, true);
+         $adminarray = json_decode($currentData, true);
 
          if($arrayData == null) {
 
@@ -98,7 +103,7 @@
             ?> <tr><td colspan="6">No Transactions At This Moment</td></tr><?php
 
         }else{
-            foreach($arrayData as $col){
+            foreach($adminarray as $col){
             ?>
             <tr>
                 <td> <?php echo $col["FROM"]; ?> </td>

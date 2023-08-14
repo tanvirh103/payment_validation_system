@@ -1,5 +1,4 @@
 <?php
-
     $userid = $_COOKIE['admin'];
     $id = $_GET['id'];
     $pendingData = file_get_contents('pending.json');
@@ -13,16 +12,11 @@
 
             if($arrayData[$key]['VOTE']<2){
 
-            if($userid == 2){
-                $adminData = file_get_contents('JSON/Admin/list-admin-1.json');
-            }else if($userid == 3){
-                $adminData = file_get_contents('JSON/Admin1/list-admin-2.json');
-            } 
-            else if($userid == 4){
-                $adminData = file_get_contents('JSON/Admin2/list-admin-3.json');
-            } 
+            if($userid == 2) $adminData = file_get_contents('JSON/Admin/list-admin-1.json');
+            else if($userid == 3) $adminData = file_get_contents('JSON/Admin1/list-admin-2.json');
+            else if($userid == 4) $adminData = file_get_contents('JSON/Admin2/list-admin-3.json');
                 
-            $adminarray = json_decode($adminData, true);
+            $arrayData2 = json_decode($adminData, true);
 
             $data = array(
 
@@ -51,15 +45,15 @@
             $flag3 = false;
             $flag4 = false;
 
-            $currentData2 = file_get_contents('JSON/Admin/list-admin-1.json');
-            $currentData3 = file_get_contents('JSON/Admin1/list-admin-2.json');
-            $currentData4 = file_get_contents('JSON/Admin2/list-admin-3.json');
+            $adminData = file_get_contents('JSON/Admin/list-admin-1.json');
+            $adminData1 = file_get_contents('JSON/Admin1/list-admin-2.json');
+            $adminData2 = file_get_contents('JSON/Admin2/list-admin-3.json');
                 
-            $arrayData2 = json_decode($currentData2, true);
-            $arrayData3 = json_decode($currentData3, true);
-            $arrayData4 = json_decode($currentData4, true);
+            $arrayData2 = json_decode($adminData, true);
+            $arrayData3 = json_decode($adminData1, true);
+            $arrayData4 = json_decode($adminData2, true);
 
-            $data2 = array(
+            $data = array(
 
                 'ID' => $id,
                 'TO' => $arrayData[$key]['TO'],
@@ -88,9 +82,9 @@
             }
 
 
-            if ($flag2 == false) $adminarray [] = $data2;
-            if ($flag3 == false) $arrayData3 [] = $data2;
-            if ($flag4 == false) $arrayData4 [] = $data2;
+            if ($flag2 == false) $arrayData2 [] = $data;
+            if ($flag3 == false) $arrayData3 [] = $data;
+            if ($flag4 == false) $arrayData4 [] = $data;
             
 
             $jsonData2 = json_encode($arrayData2, JSON_PRETTY_PRINT);
