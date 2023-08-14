@@ -7,24 +7,20 @@
     <title>Admin Dashboard</title>
 </head>
 <body>
-    <center>
-        <h2>Admin Dashboard</h2>
-    </center>
-    <table align="right">
-        <td><td><a href="logout.php"><button id="logout">Logout</button></a></td></td>
-    </table>
+    <div class="payment-list">
+    <div class="section-title">Pending Payments</div>
    
-    <table id="pending_table" cellspacing="25" align="left">
-        <tr><td colspan="6">Pending Payment</td></tr>
+    <table class="payment-table">
+      <thead>
         <tr>
-            <td>From &nbsp;&nbsp;</td>
-            <td>To &nbsp;&nbsp;</td>
-            <td>Amount &nbsp;&nbsp;</td>
-            <td>Date&nbsp;&nbsp;</td>
-            <td>Approval Votes&nbsp;&nbsp;</td>
-            <td>Action&nbsp;&nbsp;</td>
+          <th>From</th>
+          <th>To</th>
+          <th>Amount</th>
+          <th>Date</th>
+          <th>Approval Votes</th>
+          <th>Action</th>
         </tr>
-        <tr></tr>
+      </thead>
         <?php
          $usuerID = $_COOKIE['admin'];
 
@@ -66,7 +62,7 @@
                         <td> <?php echo $col["AMOUNT"]; ?> </td>
                         <td> <?php echo $col["DATE"]; ?> </td>
                         <td> <?php echo $col["VOTE"]; ?> </td>
-                        <td> <a href="approve_controller.php?id=<?php echo $col["ID"]; ?>"><button class="btn">Approve</button></a></td>
+                        <td> <a href="approve_controller.php?id=<?php echo $col["ID"]; ?>"><button class="action-button">Approve</button></a></td>
                     </tr>
                 <?php
                 }
@@ -75,15 +71,18 @@
             ?>
         
     </table>
-    <table id="pending_table" cellspacing="25" align="right">
-        <tr><td colspan="6">Approved Payment</td></tr>
+    
+    <div class="section-title">Approved Payments</div>
+    <table class="payment-table">
+      <thead>
         <tr>
-            <td>From&nbsp;&nbsp;</td>
-            <td>To&nbsp;&nbsp;</td>
-            <td>Amount&nbsp;&nbsp;</td>
-            <td>Date&nbsp;&nbsp;</td>
-            <td>Approval Votes&nbsp;&nbsp;</td>
+          <th>From</th>
+          <th>To</th>
+          <th>Amount</th>
+          <th>Date</th>
+          <th>Approval Votes</th>
         </tr>
+      </thead>
         <?php
         $usuerID = $_COOKIE['admin'];
         if($usuerID == 2) {
@@ -114,5 +113,6 @@
 
         ?>
     </table>
+    </div>
 </body>
 </html>

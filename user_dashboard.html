@@ -7,23 +7,37 @@
     <title>User Dashboard</title>
 </head>
 <body>
-    <center>
-        <h2>Payment Form</h2>
-        <table align="right">
-            <td><td><a href="logout.php"><button id="logout">Logout</button></a></td></td>
-        </table>
-        <table>
-            <form action="payment_controller.php" method="post">
-                <tr><td>From: </td><td><input type="text" name="from" class="input"></td></tr>
-                <tr><td>To: </td><td><input type="text" name="to" class="input"></td></tr>
-                <tr><td>Date: </td><td><input type="text" name="date" class="input"></td></tr>
-                <tr><td>Amount: </td><td><input type="text" name="amount" class="input"></td></tr>
-                <tr><td>Signature: </td><td><input type="text" name="signature" class="input"></td></tr>
-                <tr><td><br></td></tr>
-                <tr align="center"><td colspan="3"><input type="submit" name="submit" id="" value="Make Payment"></td></tr>
-            </form>
-        </table>
-    </center>
+    <div class="transaction-form">
+      <div class="form-section">
+        <h2>Transaction Form</h2>
+        <form action="payment_controller.php" method="post">
+          <div class="form-group">
+            <label class="form-label" for="from">From:</label>
+            <input type="text" class="form-input" id="from" name="from" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="to">To:</label>
+            <input type="text" class="form-input" id="to" name="to" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="date">Date:</label>
+            <input type="text" class="form-input" id="date" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="amount">Amount:</label>
+            <input type="number" class="form-input" id="amount" name="amount" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="signature">Signature:</label>
+            <input class="form-input" id="signature" name="signature" rows="3" required>
+          </div>
+          <input type="submit" name="submit" value="Make Payment" class="submit-button">
+          
+        </form>
+        <a href="logout.php"><button>Logout</button></a>
+      </div>
+    </div>
     
-</body>
-</html>
+  </body>
+  </html>
+  

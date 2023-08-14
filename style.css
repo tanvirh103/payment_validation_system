@@ -35,9 +35,126 @@ body {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
   }
 
   .login-button:hover {
+    background-color: #0056b3;
+  }
+
+
+  
+  .transaction-form {
+    display: flex;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 500px;
+  }
+
+  .form-section {
+    flex: 1;
+    padding: 20px;
+  }
+
+  .logout-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 20px;
+  }
+
+  .logout-button {
+    background-color: transparent;
+    color: #007bff;
+    border: none;
+    cursor: pointer;
+  }
+
+  .logout-button:hover {
+    text-decoration: underline;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .form-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .form-input {
+    width: 85%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .submit-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .submit-button:hover {
+    background-color: #0056b3;
+  }
+
+  .payment-list {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+
+  .section-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .payment-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .payment-table th, .payment-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    text-align: left;
+  }
+
+  .payment-table th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+  }
+
+  .approved {
+    color: green;
+  }
+
+  .pending {
+    color: orange;
+  }
+
+  .action-button {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .action-button:hover {
     background-color: #0056b3;
   }
