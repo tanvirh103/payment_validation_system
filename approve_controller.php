@@ -12,13 +12,13 @@
 
             if($arrayData[$key]['VOTE']<2){
 
-            if($userid == 2) $adminData = file_get_contents('JSON/Admin/list-admin-1.json');
-            else if($userid == 3) $adminData = file_get_contents('JSON/Admin1/list-admin-2.json');
-            else if($userid == 4) $adminData = file_get_contents('JSON/Admin2/list-admin-3.json');
+                if($userid == 2) $adminData = file_get_contents('JSON/Admin/list-admin-1.json');
+                else if($userid == 3) $adminData = file_get_contents('JSON/Admin1/list-admin-2.json');
+                else if($userid == 4) $adminData = file_get_contents('JSON/Admin2/list-admin-3.json');
                 
-            $arrayData2 = json_decode($adminData, true);
+                $arrayData2 = json_decode($adminData, true);
 
-            $data = array(
+                $data = array(
 
                 'ID' => $id,
                 'TO' => $arrayData[$key]['TO'],
@@ -28,32 +28,32 @@
                 'SIGNATURE' => $arrayData[$key]['SIGNATURE'],
                 'VOTE' => $arrayData[$key]['VOTE']
             
-            );
+                );
 
-            $arrayData2 [] = $data;
-            $jsonData2 = json_encode($arrayData2, JSON_PRETTY_PRINT);
+                $arrayData2 [] = $data;
+                $jsonData2 = json_encode($arrayData2, JSON_PRETTY_PRINT);
 
-            if($userid == 2) file_put_contents('JSON/Admin/list-admin-1.json', $jsonData2);
-            else if($userid == 3) file_put_contents('JSON/Admin1/list-admin-2.json', $jsonData2);
-            else if($userid == 4) file_put_contents('JSON/Admin2/list-admin-3.json', $jsonData2);
+                if($userid == 2) file_put_contents('JSON/Admin/list-admin-1.json', $jsonData2);
+                else if($userid == 3) file_put_contents('JSON/Admin1/list-admin-2.json', $jsonData2);
+                else if($userid == 4) file_put_contents('JSON/Admin2/list-admin-3.json', $jsonData2);
 
-            if(file_put_contents('pending.json', $jsonData)) header('location: admin_dashboard.php');
-        }
-        else{
+                if(file_put_contents('pending.json', $jsonData)) header('location: admin_dashboard.php');
+            }
+            else{
 
-            $flag2 = false;
-            $flag3 = false;
-            $flag4 = false;
+                $flag2 = false;
+                $flag3 = false;
+                $flag4 = false;
 
-            $adminData = file_get_contents('JSON/Admin/list-admin-1.json');
-            $adminData1 = file_get_contents('JSON/Admin1/list-admin-2.json');
-            $adminData2 = file_get_contents('JSON/Admin2/list-admin-3.json');
+                $adminData = file_get_contents('JSON/Admin/list-admin-1.json');
+                $adminData1 = file_get_contents('JSON/Admin1/list-admin-2.json');
+                $adminData2 = file_get_contents('JSON/Admin2/list-admin-3.json');
                 
-            $arrayData2 = json_decode($adminData, true);
-            $arrayData3 = json_decode($adminData1, true);
-            $arrayData4 = json_decode($adminData2, true);
+                $arrayData2 = json_decode($adminData, true);
+                $arrayData3 = json_decode($adminData1, true);
+                $arrayData4 = json_decode($adminData2, true);
 
-            $data = array(
+                $data = array(
 
                 'ID' => $id,
                 'TO' => $arrayData[$key]['TO'],
@@ -63,19 +63,19 @@
                 'SIGNATURE' => $arrayData[$key]['SIGNATURE'],
                 'VOTE' => $arrayData[$key]['VOTE']
             
-            );
+                );
 
-            foreach($arrayData2 as $row2){
+                foreach($arrayData2 as $row2){
 
                 if ($row2["ID"] == $id) $flag2 = true;
 
-            }
-            foreach($arrayData3 as $row3){
+                }
+                foreach($arrayData3 as $row3){
 
                 if ($row3["ID"] == $id) $flag3 = true;
 
-            }
-            foreach($arrayData4 as $row4){
+                }
+                foreach($arrayData4 as $row4){
 
                 if ($row4["ID"] == $id) $flag4 = true;
 
