@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,7 +21,7 @@ body {
   }
 
   .login-input {
-    width: 100%;
+    width: 80%;
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
