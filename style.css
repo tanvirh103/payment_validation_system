@@ -138,13 +138,6 @@ body {
     font-weight: bold;
   }
 
-  .approved {
-    color: green;
-  }
-
-  .pending {
-    color: orange;
-  }
 
   .action-button {
     background-color: #007bff;

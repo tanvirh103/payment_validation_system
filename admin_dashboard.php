@@ -114,5 +114,6 @@
         ?>
     </table>
     </div>
+    <a href="logout.php"><button>Logout</button></a>
 </body>
 </html>
