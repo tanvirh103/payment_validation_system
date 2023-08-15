@@ -13,6 +13,7 @@
 </head>
 <body>
     <div class="payment-list">
+    
     <div class="section-title">Pending Payments</div>
    
     <table class="payment-table">
@@ -112,8 +113,12 @@
         }
 
         ?>
+        <tr align="right"><td><a href="logout.php"><button class="logout-button">Logout</button></a></td></tr>
     </table>
+
+  
+    
     </div>
-    <a href="logout.php"><button>Logout</button></a>
+   
 </body>
 </html>
