@@ -8,6 +8,18 @@
         $amount=$_POST['amount'];
         $signature=$_POST['signature'];
 
+        if(is_numeric($amount)){
+            if($amount>0 && $amount<=1000){}
+            else {
+                echo "Error! Minimum is 0 BDT and maximum is 1000 BDT.";
+                return;
+            }
+        }else{
+            echo "Error! Amount needs to be a number.";
+            return;
+        }
+    
+
         $details=array(
         "ID"=>$id,
         "FROM"=>$from,

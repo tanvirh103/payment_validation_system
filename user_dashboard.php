@@ -30,7 +30,8 @@
           </div>
           <div class="form-group">
             <label class="form-label" >Amount:</label>
-            <input type="number" class="form-input" id="amount" name="amount" required>
+            <input type="number" class="form-input" id="amount" name="amount" onkeypress="check()" required>
+            <h3 id="message"></h3>
           </div>
           <div class="form-group">
             <label class="form-label">Signature:</label>
@@ -42,7 +43,16 @@
       </div>
       <div class="form-group"><a href="logout.php"><button class="logout-button">Logout</button></a></div>
     </div>
-    
+    <script>
+      function check() {
+            let amount = document.getElementById('amount').value;
+            if (amount<10) {
+                document.getElementById('message').innerHTML = "you can not pay less than 10 TK";
+            }else{
+              document.getElementById('message').innerHTML = " ";
+            }
+        }
+    </script>
     
   </body>
   </html>
